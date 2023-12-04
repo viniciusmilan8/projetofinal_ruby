@@ -1,0 +1,36 @@
+<!-- app/views/tasks/_form.html.erb -->
+
+<%= form_with(model: @task, local: true) do |form| %>
+  <div class="container mt-4">
+    <div class="row justify-content-left">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3" style="padding-left: 10px;">
+            <h1>Edit Task</h1> 
+        </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= form.label :title %>
+          <%= form.text_field :title, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :description %>
+          <%= form.text_area :description, class: 'form-control' %>
+        </div>
+
+        <div class="form-check form-group">
+          <%= form.check_box :completed, class: 'form-check-input' %>
+          <%= form.label :completed, class: 'form-check-label' %>
+        </div>
+
+        <div class="form-group">
+          <%= form.submit 'Update Task', class: 'btn btn-primary mr-2' %>
+          <%= link_to 'Back', tasks_path, class: 'btn btn-secondary' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
